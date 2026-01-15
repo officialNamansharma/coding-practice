@@ -1,8 +1,8 @@
-public class Areaofcircle {
+public class areaofcircle {
     public static void main(String[] args) {
-        double r = 3;
-        double a = 3.14*r*r;
-        System.out.println(a);
-        
+        double r = 4; //with texts
+        double a = 3.14 * r * r;
+        System.out.println("Area of Circle with radious "+r+ " is "+a);
+
     }
 }
