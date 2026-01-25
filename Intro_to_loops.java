@@ -1,10 +1,14 @@
 import java.util.Scanner;
-public class classname
+public class main
 {
     public static void main(String[] args) 
     {
      Scanner sc = new Scanner(System.in);
-     int x = sc.nextInt();
-     System.out.println(x);    
+     int n = sc.nextInt();
+     for(int i=0 ; i<n ; i++ )
+     {
+        System.out.println("Hello world");
+     }
+
     }
 }
