@@ -1,5 +1,4 @@
-//count digits 
-
+// WAP to print sum of digits of a given number.
 import java.util.Scanner;
 public class main
 {
@@ -7,13 +6,14 @@ public class main
     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int count=0;         
-        
-        while(n!=0)
+        int sum=0;
+
+        while(n != 0)
         {
-            n /= 10;
-            count++;
+           int ld = n%10;
+           sum += ld;
+           n/=10;
         }
-        System.out.println(count);
+        System.out.println(sum);
     }
 }
