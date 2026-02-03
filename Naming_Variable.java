@@ -1,7 +1,18 @@
-public class variablename {
-    public static void main(String[] args){
-        int $y = 6;
-        // special character not allowed in initilization and declaration accept $ and _
-        System.out.println($y);
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();   // number of terms
+
+        int a = 0, b = 1;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
     }
 }
