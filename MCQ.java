@@ -5,23 +5,18 @@ public class Calculator {
 
         Scanner sc = new Scanner(System.in);
 
-        // Input first number
-        System.out.print("Enter first number: ");
+        System.out.println("Enter first number: ");
         double num1 = sc.nextDouble();
 
-        // Input second number
-        System.out.print("Enter second number: ");
+        System.out.println("Enter second number: ");
         double num2 = sc.nextDouble();
 
-        // Input operator
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = sc.next().charAt(0);
+        System.out.println("Choose an operation: +  -  *  /");
+        char op = sc.next().charAt(0);
 
         double result;
 
-        // Switch case for operations
-        switch (operator) {
-
+        switch (op) {
             case '+':
                 result = num1 + num2;
                 System.out.println("Result = " + result);
@@ -42,12 +37,12 @@ public class Calculator {
                     result = num1 / num2;
                     System.out.println("Result = " + result);
                 } else {
-                    System.out.println("Error: Division by zero is not allowed!");
+                    System.out.println("Cannot divide by zero!");
                 }
                 break;
 
             default:
-                System.out.println("Invalid operator!");
+                System.out.println("Invalid operation!");
         }
 
         sc.close();
