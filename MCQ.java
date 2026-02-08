@@ -1,19 +1,21 @@
 import java.util.Scanner;
 
-public class AddTwentyReflection {
+public class FactorialProgram {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Taking input from user
-        System.out.print("Enter any number: ");
+        System.out.print("Enter a number: ");
         int num = sc.nextInt();
 
-        // Adding 20
-        int result = num + 20;
+        long factorial = 1;
 
-        // Reflecting output
-        System.out.println("After adding 20, the result is: " + result);
+        // Loop to calculate factorial
+        for (int i = 1; i <= num; i++) {
+            factorial = factorial * i;
+        }
+
+        System.out.println("Factorial of " + num + " is: " + factorial);
 
         sc.close();
     }
