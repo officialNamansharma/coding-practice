@@ -1,11 +1,58 @@
-//Ternary Operator basically cool banna ka tarika or replacement of ifelse 
-//expression 1 : expression 2 : expression 3
 import java.util.Scanner;
-public class main{
-    public static void main(String[] args){
+
+public class CalculatorApp {
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        
-        System.out.println((n%2==0 ? "Even" : "Odd"));
+
+        System.out.println("===== Simple Java Calculator =====");
+
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+
+        System.out.println("\nChoose Operation:");
+        System.out.println("1. Addition (+)");
+        System.out.println("2. Subtraction (-)");
+        System.out.println("3. Multiplication (*)");
+        System.out.println("4. Division (/)");
+
+        System.out.print("Enter your choice (1-4): ");
+        int choice = sc.nextInt();
+
+        double result;
+
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                System.out.println("Result = " + result);
+                break;
+
+            case 2:
+                result = num1 - num2;
+                System.out.println("Result = " + result);
+                break;
+
+            case 3:
+                result = num1 * num2;
+                System.out.println("Result = " + result);
+                break;
+
+            case 4:
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result = " + result);
+                } else {
+                    System.out.println("Error: Cannot divide by zero!");
+                }
+                break;
+
+            default:
+                System.out.println("Invalid Choice!");
+        }
+
+        sc.close();
     }
 }
