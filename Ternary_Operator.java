@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
-public class CalculatorApp {
+public class Calculator {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("===== Simple Java Calculator =====");
+        System.out.println("---- Simple Calculator ----");
 
         System.out.print("Enter first number: ");
         double num1 = sc.nextDouble();
@@ -13,45 +14,36 @@ public class CalculatorApp {
         System.out.print("Enter second number: ");
         double num2 = sc.nextDouble();
 
-        System.out.println("\nChoose Operation:");
-        System.out.println("1. Addition (+)");
-        System.out.println("2. Subtraction (-)");
-        System.out.println("3. Multiplication (*)");
-        System.out.println("4. Division (/)");
+        System.out.println("Choose operation: +  -  *  /");
+        char op = sc.next().charAt(0);
 
-        System.out.print("Enter your choice (1-4): ");
-        int choice = sc.nextInt();
+        double result = 0;
 
-        double result;
-
-        switch (choice) {
-            case 1:
+        switch (op) {
+            case '+':
                 result = num1 + num2;
-                System.out.println("Result = " + result);
                 break;
 
-            case 2:
+            case '-':
                 result = num1 - num2;
-                System.out.println("Result = " + result);
                 break;
 
-            case 3:
+            case '*':
                 result = num1 * num2;
-                System.out.println("Result = " + result);
                 break;
 
-            case 4:
-                if (num2 != 0) {
+            case '/':
+                if (num2 != 0)
                     result = num1 / num2;
-                    System.out.println("Result = " + result);
-                } else {
-                    System.out.println("Error: Cannot divide by zero!");
-                }
+                else
+                    System.out.println("Cannot divide by zero!");
                 break;
 
             default:
-                System.out.println("Invalid Choice!");
+                System.out.println("Invalid operation!");
         }
+
+        System.out.println("Result = " + result);
 
         sc.close();
     }
