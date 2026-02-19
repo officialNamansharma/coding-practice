@@ -1,15 +1,18 @@
 import java.util.Scanner;
+import java.util.Random;
 
-public class Main {
+public class NumberGuessingGame {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        Random random = new Random();
 
-        System.out.println("Enter your name:");
-        String name = sc.nextLine();
+        int number = random.nextInt(100) + 1;  // Random number between 1-100
+        int guess;
+        int attempts = 0;
 
-        System.out.println("Hello, " + name + "! Welcome to Java.");
+        System.out.println("Welcome to the Number Guessing Game!");
+        System.out.println("Guess a number between 1 and 100");
 
-        sc.close();
-    }
-}
+        do {
