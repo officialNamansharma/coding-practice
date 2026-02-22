@@ -1,50 +1,31 @@
-// Parent Class (Encapsulation)
-class Person {
-    private String name;   // data hiding
-    private int age;
+import java.util.Random;
+import java.util.Scanner;
 
-    // Constructor
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    // Getter methods (Encapsulation)
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void display() {
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-    }
-}
-
-// Child Class (Inheritance)
-class Student extends Person {
-    private int rollNumber;
-
-    public Student(String name, int age, int rollNumber) {
-        super(name, age);  // calling parent constructor
-        this.rollNumber = rollNumber;
-    }
-
-    // Polymorphism (Method Overriding)
-    @Override
-    public void display() {
-        super.display();
-        System.out.println("Roll Number: " + rollNumber);
-    }
-}
-
-// Main Class
-public class OOPExample {
+public class GuessNumber {
     public static void main(String[] args) {
-        Student s1 = new Student("Mohit", 22, 101);
-        s1.display();
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int numberToGuess = random.nextInt(100) + 1; // 1 to 100
+        int userGuess = 0;
+        int attempts = 0;
+
+        System.out.println("Guess a number between 1 and 100");
+
+        while (userGuess != numberToGuess) {
+            System.out.print("Enter your guess: ");
+            userGuess = scanner.nextInt();
+            attempts++;
+
+            if (userGuess < numberToGuess) {
+                System.out.println("Too low!");
+            } else if (userGuess > numberToGuess) {
+                System.out.println("Too high!");
+            } else {
+                System.out.println("Correct! You guessed it in " + attempts + " attempts.");
+            }
+        }
+
+        scanner.close();
     }
 }
