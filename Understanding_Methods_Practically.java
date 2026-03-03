@@ -1,35 +1,18 @@
 import java.util.Scanner;
 
-public class GradeCalculator {
+public class EvenOddCheck {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter number of subjects: ");
-        int n = sc.nextInt();
+        System.out.print("Enter a number: ");
+        int number = input.nextInt();
 
-        double total = 0;
-
-        for (int i = 1; i <= n; i++) {
-            System.out.print("Enter marks of subject " + i + ": ");
-            double marks = sc.nextDouble();
-            total += marks;
-        }
-
-        double percentage = total / n;
-        System.out.println("Percentage: " + percentage);
-
-        if (percentage >= 90) {
-            System.out.println("Grade: A+");
-        } else if (percentage >= 75) {
-            System.out.println("Grade: A");
-        } else if (percentage >= 60) {
-            System.out.println("Grade: B");
-        } else if (percentage >= 50) {
-            System.out.println("Grade: C");
+        if (number % 2 == 0) {
+            System.out.println("The number is Even.");
         } else {
-            System.out.println("Grade: Fail");
+            System.out.println("The number is Odd.");
         }
 
-        sc.close();
+        input.close();
     }
 }
