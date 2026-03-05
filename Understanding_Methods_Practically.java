@@ -1,18 +1,9 @@
-import java.util.Scanner;
-
-public class EvenOddCheck {
+public class AddNumbers {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        int a = 10;
+        int b = 20;
+        int sum = a + b;
 
-        System.out.print("Enter a number: ");
-        int number = input.nextInt();
-
-        if (number % 2 == 0) {
-            System.out.println("The number is Even.");
-        } else {
-            System.out.println("The number is Odd.");
-        }
-
-        input.close();
+        System.out.println("Sum = " + sum);
     }
 }
