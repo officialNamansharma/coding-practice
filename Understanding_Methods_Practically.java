@@ -1,8 +1,18 @@
-public class NumberSquares {
+import java.util.Scanner;
+
+public class EvenOddCheck {
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            int square = i * i;
-            System.out.println("Number: " + i + " Square: " + square);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if(num % 2 == 0) {
+            System.out.println("The number is Even.");
+        } else {
+            System.out.println("The number is Odd.");
         }
+
+        sc.close();
     }
 }
