@@ -7,7 +7,7 @@ public class EvenOdd {
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
 
-        if(num % 2 == 0) {
+        if (num % 2 == 0) {
             System.out.println("The number is Even");
         } else {
             System.out.println("The number is Odd");
