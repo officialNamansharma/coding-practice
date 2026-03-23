@@ -1,18 +1,21 @@
 import java.util.Scanner;
 
-public class EvenOdd {
+public class Main {
     public static void main(String[] args) {
+        // Print a message
+        System.out.println("Hello, Welcome to Java!");
+
+        // Create Scanner object for input
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
+        // Take user input
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
 
-        if (num % 2 == 0) {
-            System.out.println("The number is Even");
-        } else {
-            System.out.println("The number is Odd");
-        }
+        // Output with user input
+        System.out.println("Hello " + name + ", nice to meet you!");
 
+        // Close scanner
         sc.close();
     }
 }
