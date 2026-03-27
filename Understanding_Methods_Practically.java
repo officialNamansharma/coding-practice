@@ -1,47 +1,35 @@
 import java.util.Scanner;
 
-public class Calculator {
+public class StudentGradeCalculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter first number:");
-        double num1 = sc.nextDouble();
+        System.out.print("Enter marks of 5 subjects: ");
+        
+        int s1 = sc.nextInt();
+        int s2 = sc.nextInt();
+        int s3 = sc.nextInt();
+        int s4 = sc.nextInt();
+        int s5 = sc.nextInt();
 
-        System.out.println("Enter second number:");
-        double num2 = sc.nextDouble();
+        int total = s1 + s2 + s3 + s4 + s5;
+        double percentage = total / 5.0;
 
-        System.out.println("Choose operation: +  -  *  /");
-        char operator = sc.next().charAt(0);
+        System.out.println("Total Marks = " + total);
+        System.out.println("Percentage = " + percentage);
 
-        double result = 0;
-
-        switch(operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-
-            case '-':
-                result = num1 - num2;
-                break;
-
-            case '*':
-                result = num1 * num2;
-                break;
-
-            case '/':
-                if(num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error: Cannot divide by zero");
-                    return;
-                }
-                break;
-
-            default:
-                System.out.println("Invalid operator");
-                return;
+        if (percentage >= 90) {
+            System.out.println("Grade: A+");
+        } else if (percentage >= 75) {
+            System.out.println("Grade: A");
+        } else if (percentage >= 60) {
+            System.out.println("Grade: B");
+        } else if (percentage >= 50) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: Fail");
         }
 
-        System.out.println("Result: " + result);
+        sc.close();
     }
 }
