@@ -4,32 +4,34 @@ import java.util.Scanner;
 class Student {
     int id;
     String name;
-    double marks;
+    int age;
 
-    // Constructor
-    Student(int id, String name, double marks) {
+    Student(int id, String name, int age) {
         this.id = id;
         this.name = name;
-        this.marks = marks;
+        this.age = age;
     }
 
-    // Display student details
     void display() {
-        System.out.println("ID: " + id + ", Name: " + name + ", Marks: " + marks);
+        System.out.println("ID: " + id + ", Name: " + name + ", Age: " + age);
     }
 }
 
-public class StudentManagementSystem {
+public class StudentManagement {
     public static void main(String[] args) {
-        ArrayList<Student> students = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
+        ArrayList<Student> students = new ArrayList<>();
 
-        while (true) {
-            System.out.println("\n1. Add Student");
-            System.out.println("2. View Students");
+        int choice;
+
+        do {
+            System.out.println("\n--- Student Management System ---");
+            System.out.println("1. Add Student");
+            System.out.println("2. Display Students");
             System.out.println("3. Exit");
-            System.out.print("Enter choice: ");
-            int choice = sc.nextInt();
+            System.out.print("Enter your choice: ");
+            
+            choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
@@ -40,11 +42,11 @@ public class StudentManagementSystem {
                     System.out.print("Enter Name: ");
                     String name = sc.nextLine();
 
-                    System.out.print("Enter Marks: ");
-                    double marks = sc.nextDouble();
+                    System.out.print("Enter Age: ");
+                    int age = sc.nextInt();
 
-                    students.add(new Student(id, name, marks));
-                    System.out.println("Student Added Successfully!");
+                    students.add(new Student(id, name, age));
+                    System.out.println("Student added successfully!");
                     break;
 
                 case 2:
@@ -59,13 +61,15 @@ public class StudentManagementSystem {
                     break;
 
                 case 3:
-                    System.out.println("Exiting...");
-                    sc.close();
-                    return;
+                    System.out.println("Exiting program...");
+                    break;
 
                 default:
                     System.out.println("Invalid choice!");
             }
-        }
+
+        } while (choice != 3);
+
+        sc.close();
     }
 }
