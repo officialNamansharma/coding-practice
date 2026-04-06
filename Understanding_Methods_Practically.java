@@ -1,23 +1,21 @@
-// Find the Largest of three number in Java 
+// 7. Reverse a number (e.g., 123 → 321)
 import java.util.Scanner;
-public class Main{
-    public static void main(String[] args){
+public class Main
+{ 
+    
+    public static void main(String[] args)
+    {
         Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        if (a>b && a>c) 
+        int reverse=0, remender;
+
+        while( number != 0)
         {
-            System.out.println("A is Greater");
-        } 
-        else if(b>a && b>c)
-        {
-            System.out.println("B is Greater");
-        } 
-        else if(c>a && c>b)
-        {
-            System.out.println("C is Greater");
+            remender = number%10;
+            reverse = reverse*10 + remender;
+            number = number/10;
         }
+        System.out.println(reverse);
     }
 }
