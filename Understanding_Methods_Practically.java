@@ -1,19 +1,23 @@
-//Count number of Digits in a number
 import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        int count=0;
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        while(num != 0)
+        int max = Math.max(a, b);
+
+        while(true)
         {
-            count = count+1;
-            num = num/10;
+            if(max % a == 0 && max % b == 0)
+            {
+                System.out.println("LCM = " + max);
+                break;
+            }
+            max++;
         }
-
-        System.out.println(count);
     }
 }
