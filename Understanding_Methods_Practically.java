@@ -1,17 +1,19 @@
-import java.util.Scanner;
 public class main
 {
-    public static void main(String[] args) 
-    { 
-        
-        
-        for(int i=1 ; i<=4 ; i++)
+    public static void main(String[] args)
+    {
+        for(int i=1; i<=4; i++) //Row
         {
-            for(int j=1 ; j<=i ; j++)
+           for(int s=3; s>=i; s--)
+            {
+                System.out.print(" ");
+            }
+            
+            for(int j=1; j<=i; j++)
             {
                 System.out.print("x");
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 }
